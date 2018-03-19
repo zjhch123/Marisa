@@ -1,0 +1,59 @@
+@import './stand.scss';
+@import './move.scss';
+@import './smile.scss';
+@import './speedUp.scss';
+
+.fps {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  font-size: 14px;
+  height: 20px;
+}
+
+.marisa {
+  z-index: 9999;
+  width: 300px;
+  height: 300px;
+  display: block;
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &.stand {
+    background-image: url(../assets/stand.png);
+    background-position: 0 0;
+    animation: stand 0.98s steps(1, start) infinite;
+  }
+  &.move {
+    background-image: url(../assets/move.png);
+    background-position: 0 0;
+    animation: move1 0.32s steps(1, start), move2 0.48s 0.32s steps(1, start) infinite;
+  }
+  &.smile {
+    background-image: url(../assets/smile.png);
+    background-position: 0 0;
+    animation: smile1 1.3s steps(1, start), smile2 0.2s 1.3s steps(1, start) infinite;
+  }
+  &.speedUp {
+    background-image: url(../assets/speedUp.png);
+    background-position: 0 0;
+    animation: speedUp1 0.49s steps(1, start), speedUp2 0.63s 0.49s steps(1, start) infinite;
+  }
+}
+
+.pre_load {
+  opacity: 0;
+  pointer-events: none;
+  &.move {
+    background-image: url(../assets/move.png);
+  }
+  &.smile {
+    background-image: url(../assets/smile.png);
+  }
+  &.speedUp {
+    background-image: url(../assets/speedUp.png);
+  }
+}

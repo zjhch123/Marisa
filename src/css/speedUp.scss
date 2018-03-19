@@ -1,0 +1,59 @@
+@keyframes speedUp1 {
+  0% {
+    background-position: 0 0
+  }
+  14.29% {
+    background-position: 0 -300px
+  }
+  28.57% {
+    background-position: 0 -600px
+  }
+  42.86% {
+    background-position: 0 -900px
+  }
+  57.14% {
+    background-position: 0 -1200px
+  }
+  71.43% {
+    background-position: 0 -1500px
+  }
+  85.71% {
+    background-position: 0 -1800px
+  }
+  100% {
+    background-position: 0 -2100px
+  }
+}
+
+@keyframes speedUp2 {
+  0% {
+    background-position: 0 -2100px
+  }
+  11.11% {
+    background-position: 0 -2400px
+  }
+  22.22% {
+    background-position: 0 -2700px
+  }
+  33.33% {
+    background-position: 0 -3000px
+  }
+  44.44% {
+    background-position: 0 -3300px
+  }
+  55.56% {
+    background-position: 0 -3600px
+  }
+  66.67% {
+    background-position: 0 -3900px
+  }
+  77.78% {
+    background-position: 0 -4200px
+  }
+  88.89% {
+    background-position: 0 -4500px
+  }
+  100% {
+    background-position: 0 -2100px
+  }
+}

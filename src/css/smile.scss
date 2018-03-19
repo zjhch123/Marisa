@@ -1,0 +1,56 @@
+@keyframes smile1 {
+  0% {
+    background-position: 0 0
+  }
+  7.69% {
+    background-position: 0 -300px
+  }
+  15.38% {
+    background-position: 0 -600px
+  }
+  23.08% {
+    background-position: 0 -900px
+  }
+  30.77% {
+    background-position: 0 -1200px
+  }
+  38.46% {
+    background-position: 0 -1500px
+  }
+  46.15% {
+    background-position: 0 -1800px
+  }
+  53.85% {
+    background-position: 0 -2100px
+  }
+  61.54% {
+    background-position: 0 -2400px
+  }
+  69.23% {
+    background-position: 0 -2700px
+  }
+  76.92% {
+    background-position: 0 -3000px
+  }
+  84.62% {
+    background-position: 0 -3300px
+  }
+  92.31% {
+    background-position: 0 -3600px
+  }
+  100% {
+    background-position: 0 -3900px
+  }
+}
+
+@keyframes smile2 {
+  0% {
+    background-position: 0 -3900px
+  }
+  50% {
+    background-position: 0 -4200px
+  }
+  100% {
+    background-position: 0 -3900px
+  }
+}
