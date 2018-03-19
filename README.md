@@ -6,7 +6,15 @@ npm run dev
 npm run build
 ```
 
+![1](https://raw.githubusercontent.com/zjhch123/Marisa/master/preview/1.jpg)
 
+![2](https://raw.githubusercontent.com/zjhch123/Marisa/master/preview/2.jpg)
+
+![3](https://raw.githubusercontent.com/zjhch123/Marisa/master/preview/3.jpg)
+
+资源来源于东方心绮楼，整理于[KirisamaMarisa_Resource](https://github.com/zjhch123/KirisamaMarisa_Resource)
+
+## 使用
 
 [PC端预览地址](https://www.hduzplus.xyz/)
 
