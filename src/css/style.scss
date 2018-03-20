@@ -2,6 +2,7 @@
 @import './move.scss';
 @import './smile.scss';
 @import './speedUp.scss';
+@import './speedUpUp.scss';
 
 .fps {
   position: absolute;
@@ -41,6 +42,11 @@
     background-image: url(../assets/speedUp.png);
     background-position: 0 0;
     animation: speedUp1 0.49s steps(1, start), speedUp2 0.63s 0.49s steps(1, start) infinite;
+  }
+  &.speedUpUp {
+    background-image: url(../assets/speedUpUp.png);
+    background-position: 0 0;
+    animation: speedUpUp1 0.21s steps(1, start),speedUpUp2 0.21s 0.21s steps(1, start) infinite;
   }
 }
 

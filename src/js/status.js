@@ -1,4 +1,4 @@
-export default {
+const STATUS = {
   STAND: 0,
   MOVE: 1,
   BACK: -1,
@@ -7,4 +7,7 @@ export default {
   SMILE: 66,
   SPEEDUP: 11,
   SPEEDNORMAL: -11,
+  SPEEDUPUP: 22,
 }
+
+export default STATUS

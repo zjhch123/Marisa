@@ -8,5 +8,6 @@ export default {
   'ArrowLeft': STATUS.BACK,
   'ArrowRight': STATUS.MOVE,
   'a+': STATUS.SPEEDUP,
-  'a-': STATUS.SPEEDNORMAL
+  'a-': STATUS.SPEEDNORMAL,
+  'z': STATUS.SPEEDUPUP,
 }

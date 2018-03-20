@@ -16,7 +16,7 @@ const Marisa = {
   dom: null,
   left: 0,
   top: 0,
-  rotateY: 0,
+  rotateY: 180,
   status: [STATUS.STAND],
   speedX: 6,
   speedY: 4,
@@ -26,14 +26,20 @@ const Marisa = {
   speedUp: () => {
     if (Marisa.classList == 'move') {
       Marisa.classList = 'speedUp'
-      Marisa.speedX = 18
+      Marisa.speedX = 13
+      Marisa.speedY = 4
+    }
+  },
+  speedUpUp: () => {
+    if (Marisa.classList == 'speedUp') {
+      Marisa.classList = 'speedUpUp'
+      Marisa.speedX = 25
+      Marisa.speedY = 15
     }
   },
   speedNormal: () => {
     Marisa.speedX = 6
-    if (Marisa.classList == 'speedUp') {
-      Marisa.classList = 'move'
-    }
+    Marisa.speedY = 4
   },
   stand: () => {
     Marisa.classList = 'stand'
@@ -92,6 +98,9 @@ Marisa.Listen_Directions = function() {
         break
       case STATUS.SPEEDUP:
         Marisa.speedUp()
+        break
+      case STATUS.SPEEDUPUP:
+        Marisa.speedUpUp()
         break
       case STATUS.SPEEDNORMAL:
         Marisa.speedNormal()

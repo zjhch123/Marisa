@@ -1,0 +1,28 @@
+@keyframes speedUpUp1 {
+  0% {
+    background-position: 0 0
+  }
+  33.33% {
+    background-position: 0 -300px
+  }
+  66.67% {
+    background-position: 0 -600px
+  }
+  100% {
+    background-position: 0 -900px
+  }
+}
+@keyframes speedUpUp2 {
+  0% {
+    background-position: 0 -900px
+  }
+  33.33% {
+    background-position: 0 -1200px
+  }
+  66.67% {
+    background-position: 0 -1500px
+  }
+  100% {
+    background-position: 0 -900px
+  }
+}
