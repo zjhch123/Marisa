@@ -1,4 +1,5 @@
 const STATUS = {
+  NOTHING: -99,
   STAND: 0,
   MOVE: 1,
   BACK: -1,
@@ -8,6 +9,7 @@ const STATUS = {
   SPEEDUP: 11,
   SPEEDNORMAL: -11,
   SPEEDUPUP: 22,
+  SPEEDUPNPRMAL: -22
 }
 
 export default STATUS

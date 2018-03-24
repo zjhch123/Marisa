@@ -22,62 +22,11 @@ const Marisa = {
   speedY: 4,
   classPrefix: 'marisa',
   classList: 'stand',
-  resetStatus: () => { Marisa.status = STATUS.STAND },
-  speedUp: () => {
-    if (Marisa.classList == 'move') {
-      Marisa.classList = 'speedUp'
-      Marisa.speedX = 13
-      Marisa.speedY = 4
-    }
-  },
-  speedUpUp: () => {
-    if (Marisa.classList == 'speedUp') {
-      Marisa.classList = 'speedUpUp'
-      Marisa.speedX = 25
-      Marisa.speedY = 15
-    }
-  },
-  speedNormal: () => {
-    Marisa.speedX = 6
-    Marisa.speedY = 4
-  },
-  stand: () => {
-    Marisa.classList = 'stand'
-  },
-  moveUp: () => {
-    Marisa.top = Marisa.top - Marisa.speedY
-  },
-  moveLeft: () => {
-    Marisa.left = Marisa.left - Marisa.speedX
-    Marisa.classList = 'move'
-    Marisa.rotateY = 180
-  },
-  moveRight: () => {
-    Marisa.left = Marisa.left + Marisa.speedX
-    Marisa.classList = 'move'
-    Marisa.rotateY = 0
-  },
-  moveDown: () => {
-    Marisa.top = Marisa.top + Marisa.speedY
-  },
-  smile: () => {
-    Marisa.classList = 'smile'
-  },
-  render: () => {
-    if (!!Marisa.dom) {
-      Marisa.dom.style.transform = `translate(${Marisa.left}px,${Marisa.top}px) rotateY(${Marisa.rotateY}deg)`
-      Marisa.dom.className = `${Marisa.classPrefix} ${Marisa.classList}`
-    }
-  }
-}
-
-Marisa.Listen_Directions = function() {
-  if (Marisa.status.length == 0 || Marisa.status.reduce((a, b) => { a += b; return a }, 0) == 0) {
-    Marisa.stand()
-    return
-  }
-  for (let status of Marisa.status) {
-    switch (status) {
+  dispatch: (type) => {
+    switch (type) {
+      case STATUS.NOTHING: 
+        Marisa.nothing()
+        break
       case STATUS.STAND:
         Marisa.stand()
         break
@@ -99,12 +48,78 @@ Marisa.Listen_Directions = function() {
       case STATUS.SPEEDUP:
         Marisa.speedUp()
         break
-      case STATUS.SPEEDUPUP:
-        Marisa.speedUpUp()
-        break
       case STATUS.SPEEDNORMAL:
         Marisa.speedNormal()
         break
+      case STATUS.SPEEDUPUP:
+        Marisa.speedUpUp()
+        break
+      case STATUS.SPEEDUPNORMAL:
+        Marisa.speedUpNormal()
+        break
+    }
+  },
+  resetStatus: () => { Marisa.status = STATUS.STAND },
+  nothing: () => {},
+  speedUp: () => {
+    if (Marisa.classList == 'move') {
+      Marisa.classList = 'speedUp'
+      Marisa.speedX = 13
+    }
+  },
+  speedUpNormal: () => {
+    if (Marisa.classList == 'speedUpUp') {
+      Marisa.classList = 'speedUp'
+      Marisa.speedX = 13
+    }
+  },
+  speedUpUp: () => {
+    if (Marisa.classList == 'speedUp') {
+      Marisa.classList = 'speedUpUp'
+      Marisa.speedX = 25
+    }
+  },
+  speedNormal: () => {
+    Marisa.speedX = 6
+    Marisa.speedY = 4
+    if (Marisa.classList == 'speedUp' || Marisa.classList == 'speedUpUp') {
+      Marisa.classList = 'move'
+    }
+  },
+  stand: () => {
+    Marisa.speedX = 6
+    Marisa.speedY = 4
+    Marisa.classList = 'stand'
+  },
+  moveUp: () => {
+    Marisa.top = Marisa.top - Marisa.speedY
+  },
+  moveLeft: () => {
+    Marisa.left = Marisa.left - Marisa.speedX
+    if (Marisa.classList !== 'speedUp' && Marisa.classList !== 'speedUpUp') {
+      Marisa.classList = 'move'
+    }
+    Marisa.rotateY = 180
+  },
+  moveRight: () => {
+    Marisa.left = Marisa.left + Marisa.speedX
+    if (Marisa.classList !== 'speedUp' && Marisa.classList !== 'speedUpUp') {
+      Marisa.classList = 'move'
+    }
+    Marisa.rotateY = 0
+  },
+  moveDown: () => {
+    Marisa.top = Marisa.top + Marisa.speedY
+  },
+  smile: () => {
+    if (Marisa.classList !== 'move' && Marisa.classList !== 'speedUp' && Marisa.classList !== 'speedUpUp') {
+      Marisa.classList = 'smile'
+    }
+  },
+  render: () => {
+    if (!!Marisa.dom) {
+      Marisa.dom.style.transform = `translate(${Marisa.left}px,${Marisa.top}px) rotateY(${Marisa.rotateY}deg)`
+      Marisa.dom.className = `${Marisa.classPrefix} ${Marisa.classList}`
     }
   }
 }
