@@ -10,7 +10,13 @@ const StartListener = () => {
   keykeyjs.launch({
     targetDOM: document,
     reducers: [reducer],
-    preventDefaultKeys: ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight']
+    preventDefaultKeys: function() {
+      if (document.activeElement.tagName.toLowerCase() === 'body') {
+        return ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight']
+      } else {
+        return []
+      }
+    }
   })
 }
 
